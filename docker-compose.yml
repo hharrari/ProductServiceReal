@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  productservice:
+    image: productservice
+    build:
+      context: ./ProductServiceReal
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+
+  orderservice:
+    image: orderservice
+    build:
+      context: ./OrderService
+      dockerfile: Dockerfile
+    ports:
+      - "5002:80"
